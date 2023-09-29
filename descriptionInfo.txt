@@ -1,0 +1,33 @@
+ 
+ 
+
+//! What is ORM?
+
+ORM একটি প্রোগ্রামিং প্যারাডাইম বা টেকনিক যা ডেটাবেসের সাথে সহজভাবে ইন্টারঅ্ক্ট করার জন্য ব্যবহৃত হয়। ORM এর পূর্ণরূপ হলো "Object-Relational Mapping," এবং এটি একটি অবজেক্ট-অবজেক্ট মডেল এবং ডেটাবেস টেবিলের মধ্যে ম্যাপিং তৈরি করে। এর মাধ্যমে প্রোগ্রামাররা ডেটাবেস সংক্রান্ত কাজ করতে পারে বিনা SQL কোয়েরি লেখার প্রয়োজন হয়না।
+
+
+// Target - MySQL, SQLite
+
+
+//! Prisma ORM এ ৩টি অংশ রয়েছে -
+
+    1) Client : ডাটাবেজে যত রকম query আছে সেই query গুলো ম্যানেজ করা হয় এটি দ্বারা। অর্থাৎ create করা, Read করা, Delete করা, Update করা, transaction roll back করা এই সবগুলো কাজ Prisma Client দ্বারা করা হয়। 
+
+
+    2) Migrate : 
+    Prisma migration দিয়ে ডাটাবেস ডিজাইন করা হয়। ডাটাবেজে টেবিল তৈরি করা যায়। দুইটা টেবিল এর মধ্যে রিলেশনশিপ তৈরি করা যায়। one to one রিলেশনশিপ তৈরি করা যায় এবং one to many রিলেশনশিপ তৈরি করা যায় আবার many to many রিলেশনশিপ তৈরি করা যায়। এছাড়া বিভিন্ন ধরনের অ্যাকশন গুলো Prisma migration দ্বারা কার্যকর করা হয়।
+
+
+    3) Prisma Studio : Prisma Studio একটি গ্রাফিকাল ইউজার ইন্টারফেস ব্যবহার করে একটি Prisma ডেটাবেস মডেলের ডেটা দেখানো এবং সম্পাদনা করা যায়, সাথে সাথে ডেটা বিশ্লেষণ করা যায়।
+
+
+//! Install Prisma - 
+
+    1) npm install prisma --save-dev
+    2) npx prisma init --datasource-provider mysql 
+
+
+//! Database connection : DATABASE_URL="mysql://root:@localhost:3306/newdatabase"
+
+
+//! Migrate Database  - npx prisma migrate dev
