@@ -31,3 +31,18 @@ ORM একটি প্রোগ্রামিং প্যারাডাই�
 
 
 //! Migrate Database  - npx prisma migrate dev
+
+//! Database Design: 
+
+|| = one, | = one, 0 = not, < - = many
+
+
+//! Database Relationship 
+
+=> one to many 
+        products     products[]
+          brands         brands          @relation(fields: [brand_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+=> one to one
+        product_details product_details? 
+        

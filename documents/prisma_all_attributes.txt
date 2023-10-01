@@ -1,0 +1,56 @@
+Prisma is a database toolkit and Object-Relational Mapping (ORM) library used in various programming languages for interacting with databases. Prisma's attributes and features can vary depending on the programming language and specific version you are using. However, I can provide you with a list of common attributes and features that are often associated with Prisma:
+
+1. **Model Definitions:**
+   - `@model`: Annotation used to define a data model in Prisma.
+
+2. **Field Types:**
+   - `@id`: Specifies a field as the primary key.
+   - `@default`: Sets a default value for a field.
+   - `@unique`: Ensures that all values in the field are unique.
+   - `@updatedAt`: Automatically updates a timestamp when a record is modified.
+   - `@map`: Allows you to specify the database column name.
+   - `@db.UnsignedBigInt`: An unsigned big integer typically means a non-negative integer with a large range.
+   - `@db.VarChar(50)`: it appears to be an attempt to represent a VARCHAR field in a database table with a maximum length of 100 characters.
+   - `@db.Timestamp(0)`:  it appears to be an attempt to represent a timestamp column in a database table with a specific precision or scale of zero.
+
+3. **Data Relationships:**
+   - `@relation`: Defines relationships between models (e.g., `@relation("author")`).
+   - `@onDelete`: Specifies the action to take when related records are deleted (e.g., `@onDelete(CASCADE)`).
+
+4. **Queries:**
+   - `.findMany()`: Retrieves multiple records.
+   - `.findUnique()`: Retrieves a single record by its primary key.
+   - `.create()`: Creates a new record.
+   - `.update()`: Updates an existing record.
+   - `.delete()`: Deletes a record.
+
+5. **Filtering and Sorting:**
+   - `.where()`: Adds conditions to filter records.
+   - `.orderBy()`: Specifies the order in which records are returned.
+   - `.take()`: Limits the number of records returned.
+   - `.skip()`: Skips a specified number of records.
+
+6. **Aggregation and Grouping:**
+   - `.count()`: Counts the number of records that match a condition.
+   - `.sum()`: Calculates the sum of a numeric field.
+   - `.groupBy()`: Groups records based on a field.
+
+7. **Transactions:**
+   - `prisma.$transaction()`: Allows you to perform multiple database operations as a single transaction.
+
+8. **Database Migrations:**
+   - `prisma db push`: Applies changes to the database schema based on your Prisma schema file.
+
+9. **Raw SQL Queries:**
+   - `prisma.$queryRaw()`: Allows you to execute raw SQL queries.
+
+10. **Indexes:**
+    - Prisma allows you to define and manage database indexes in your schema.
+
+11. **Enums:**
+    - `@enum`: Defines an enumeration type.
+
+12. **Validation:**
+    - Prisma performs data validation based on the schema definitions.
+
+Please note that the specific syntax and features of Prisma may change with different versions and programming languages. It's essential to refer to the documentation for the specific version of Prisma you are using to get the most up-to-date information and examples.
