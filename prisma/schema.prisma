@@ -11,7 +11,7 @@ datasource db {
 }
 
 model brands {
-  id        BigInt     @id @default(autoincrement()) @db.UnsignedBigInt // @id = attritube || @db.UnsignedBigInt হল এটি positive হবে nagitave হবে না।
+  id        BigInt     @id @default(autoincrement()) @db.UnsignedBigInt // @id = primary key নির্ধারন করা হয়। @id দিয়ে আমাদেরকে বলে দিতে হয় যে এটি একটি primary key || @db.UnsignedBigInt হল এটি positive হবে nagitave হবে না।
   brandName String     @db.VarChar(50) // string === VARCHAR হয় mysql এ। @db.VarChar সাইজ এ বলে দিব কতটুক হবে এটি।
   brandImg  String     @db.VarChar(300)
   createdAt DateTime   @default(now()) @db.Timestamp(0) // DateTime === TIMESTAMP হয় mysql এ || @db.Timestamp(0) হল prisma এর attritube
@@ -42,7 +42,7 @@ model products {
   brand_id         BigInt            @db.UnsignedBigInt
   createdAt        DateTime          @default(now()) @db.Timestamp(0)
   updatedAt        DateTime          @default(now()) @updatedAt @db.Timestamp(0)
-  brands           brands            @relation(fields: [brand_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  brands           brands            @relation(fields: [brand_id], references: [id], onDelete: Restrict, onUpdate: Cascade) // field হল 
   categories       categories        @relation(fields: [category_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
   product_details  product_details? // one to one relationship make
   product_sliders  product_sliders?
